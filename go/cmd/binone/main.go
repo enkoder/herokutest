@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/gorilla/mux"
-	"herokutest/api"
+	"herokutest/go/api"
 	"log"
 	"net/http"
 	"os"
