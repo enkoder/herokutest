@@ -1,0 +1,1 @@
+web: $BIN_NAME
