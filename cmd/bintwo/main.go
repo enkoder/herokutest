@@ -15,5 +15,5 @@ func main() {
 	// Using gorilla for routing and enabling cors
 	router := mux.NewRouter()
 	router.HandleFunc("/", api.TwoHandler)
-	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), nil))
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), router))
 }
