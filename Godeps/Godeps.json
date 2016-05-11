@@ -3,7 +3,8 @@
 	"GoVersion": "go1.6",
 	"GodepVersion": "v66",
 	"Packages": [
-		"./go/..."
+		"./gotool/...",
+		"./webapp/..."
 	],
 	"Deps": [
 		{
