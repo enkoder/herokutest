@@ -16,8 +16,13 @@ func OneHandler(w http.ResponseWriter, r *http.Request) {
 			http.Error(w, err.Error(), 500)
 			return
 		}
-		gp := os.Getenv("GOPATH")
+
 		fmt.Fprintf(w, "Current Working DIR: %s\n", cwd)
+		logpaths, err := filepath.Glob(fmt.Sprintf("%s/*", cwd))
+		for _, f := range logpaths {
+			fmt.Fprintf(w, "\t%s\n", f)
+		}
+		gp := os.Getenv("GOPATH")
 		fmt.Fprintf(w, "GOPATH = %s\n", cwd)
 		f := filepath.Join(gp, "src", "herokutest", "python.py")
 		out, err := exec.Command("python", f).Output()
