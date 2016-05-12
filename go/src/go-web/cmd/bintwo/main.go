@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/gorilla/mux"
-	"herokutest/go/api"
+	"go-web/api"
 	"log"
 	"net/http"
 	"os"
@@ -14,6 +14,6 @@ func main() {
 
 	// Using gorilla for routing and enabling cors
 	router := mux.NewRouter()
-	router.HandleFunc("/", api.OneHandler)
+	router.HandleFunc("/", api.TwoHandler)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), router))
 }
